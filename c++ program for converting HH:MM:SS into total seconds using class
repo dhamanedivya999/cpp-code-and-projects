@@ -1,0 +1,44 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+class Time{
+	private:
+		int seconds;
+		int hh,mm,ss;
+	public:
+		void getTime();
+		void convertIntoseconds();
+		void displayTime();
+		
+};
+void Time ::getTime(){
+	cout<<"Enter Time:"<<endl;
+	cout<<"Hours?";
+	cin>>hh;
+	cout<<"Minutes?"<<endl;
+	cin>>mm;
+	cout<<"Seconds?"<<endl;
+	cin>>ss;
+}
+void Time::convertIntoseconds(){
+	seconds=hh*3600+mm*60+ss;
+}
+void Time::displayTime(){
+	cout<<"The Time is="<<setw(2)<<setfill('0')<<hh<<":"
+	                    <<setw(2)<<setfill('0')<<mm<<":"
+	                    <<setw(2)<<setfill('0')<<ss<<endl;
+	cout<<"Time in total seconds:"<<seconds;
+	                    
+}
+
+
+int main(){
+	Time T;
+	T.getTime();
+	T.convertIntoseconds();
+	T.displayTime();
+	
+	
+	return 0;
+}
